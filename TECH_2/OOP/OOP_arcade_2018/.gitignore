@@ -1,0 +1,9 @@
+.vscode
+core/*.o
+libs/*.so
+libs/*/*.o
+games/*.so
+games/*/*.o
+arcade
+test.cpp
+a.out

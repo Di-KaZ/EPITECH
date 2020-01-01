@@ -1,0 +1,7 @@
+.vscode
+src/*.o
+myftp
+vgcore.*
+B-NWP-400_myFTP.pdf
+EPITECH-MyFTP-Protocol-(RFC959-Extract).txt
+test_ftp.sh

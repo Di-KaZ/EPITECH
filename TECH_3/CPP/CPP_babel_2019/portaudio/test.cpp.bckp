@@ -1,0 +1,9 @@
+#include "PortAudio.hpp"
+
+int main(int ac, char **av)
+{
+    PortAudioClass audio;
+    float * test = audio.record();
+    audio.play(test);
+    return 0;
+}

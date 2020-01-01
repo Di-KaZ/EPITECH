@@ -1,0 +1,8 @@
+__pychache__
+dist
+exe
+pbrain-gomoku.spec
+.spec
+build
+pbrain-gomoku-ai
+.vscode

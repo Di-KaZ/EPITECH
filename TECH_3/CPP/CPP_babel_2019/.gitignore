@@ -1,0 +1,6 @@
+build
+babel_client
+babel_server
+compilLog.txt
+vgcore.*
+.vscode

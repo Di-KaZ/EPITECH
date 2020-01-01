@@ -1,0 +1,5 @@
+src/*.o
+src/LogicGate/*.o
+nanotekspice
+chip
+.vscode
