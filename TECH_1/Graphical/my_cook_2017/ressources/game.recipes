@@ -1,0 +1,11 @@
+1
+recipe
+    path
+        resssources/restaurant/potatoesNbacon.png
+    name
+        omelette
+    ingredient
+        potatoe
+        NULL
+        NULL
+end

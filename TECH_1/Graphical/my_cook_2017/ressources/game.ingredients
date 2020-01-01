@@ -1,0 +1,27 @@
+ingredient
+    name
+        bacon
+    type
+        raw,movable
+    path
+        ressources/restaurant/Bacon.png
+end
+
+ingredient
+    name
+        egg
+    type
+        raw,movable
+    path
+        ressources/restaurant/omelettee.png
+end
+
+ingredient
+    name
+        potatoe
+    type
+        raw,movable
+    path
+        ressources/restaurant/Potato.png
+end
+

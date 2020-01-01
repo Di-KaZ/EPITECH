@@ -1,0 +1,68 @@
+scene
+    name
+        menu
+    obj
+        ressources/menu/background.png 0 0 background
+    button
+        ressources/menu/play.png 570 1150 play,animated
+    button
+        ressources/menu/options.png 719 1150 options,animated
+    button
+        ressources/menu/quit.png 864 1150 quit,animated
+end
+
+scene
+    name
+        play
+    button
+        ressources/menu/quit.png 920 1350 quit,animated
+    button
+        ressources/option/menu.png 0 1550 menu,animated
+    button
+        ressources/restaurant/on.png 930 1020 on
+    button
+        ressources/restaurant/recipe.png 300 1550 help,animated
+    obj
+        ressources/restaurant/bg-food.png 850 70 l
+    obj
+        ressources/restaurant/lemondone.png 660 215 ready
+    obj
+        ressources/restaurant/clock.png 105 10 clock,animated
+    obj
+        ressources/restaurant/Stove.png 560 1000 stove,animated
+    obj
+        ressources/restaurant/Plate.png 540 180 plate
+    obj
+        ressources/restaurant/background-2.png 0 0 background
+    obj
+        ressources/restaurant/customers.png 0 0 BACKGROUND
+end
+
+scene
+    name
+        help
+    button
+        ressources/menu/play.png 920 0 play,animated
+    obj
+        ressources/restaurant/recipesbackground.png 0 0 background
+end
+
+scene
+    name
+        option
+   button
+        ressources/option/menu.png 500 0 menu,animated
+   obj
+        ressources/option/background.png 0 0 background
+end
+
+scene
+    name
+        pause
+    obj
+        ressources/option/background.png 0 0 background
+    button
+        ressources/menu/quit.png 900 1000 quit,animated
+    button
+        ressources/menu/play.png 200 200 play,animated
+end

@@ -1,0 +1,71 @@
+#!/bin/bash
+##DFINE ALL VARIABLES NEEDED ##
+
+if [ -z ${1+x} ]; then
+	echo "automakefile [Config]"
+	exit 84
+fi
+
+if ! [ -f $1 ]; then
+	echo "$1 doesn't exist"
+	exit 84
+fi
+
+## USELESS BUT HEY WE NEED TO DO THE SHOW !! ##
+BCK_DIR=$(sed -n '/BCK_DIR;/p' $1 | awk -F ';' '{print$2}')
+
+ZIP=$(sed -n '/ZIP;/p' $1 | awk -F ';' '{print$2}')
+
+ZIPFLAGS=$(sed -n '/ZIPFLAGS;/p' $1 | awk -F ';' '{print$2}')
+
+UNZIP=$(sed -n '/UNZIP;/p' $1 | awk -F ';' '{print$2}')
+
+UNZIPFLAGS=$(sed -n '/UNZIPFLAGS;/p' $1 | awk -F ';' '{print$2}')
+
+SOURCES_DIR=$(sed -n '/SOURCES_DIR;/p' $1 | awk -F ';' '{print$2}')
+
+##########################################################################
+
+PROJECT_DIR=$(sed -n '/PROJECT_DIR;/p' $1 | awk -F ';' '{print$2}')
+
+
+FILE="$PROJECT_DIR/Makefile"
+
+LIBS_DIR=$(sed -n '/LIBS_DIR;/p' $1 | awk -F ';' '{print$2}')
+
+CC=$(sed -n '/CC;/p' $1 | awk -F ';' '{print$2}')
+
+HEADER_DIR=$(sed -n '/HEADER_DIR;/p' $1 | awk -F ';' '{print$2}')
+
+CFLAGS_DIR=$(sed -n '/CFLAGS;/p' $1 | awk -F ';' '{print$2}')
+
+LIBS_DIR=$(sed -n '/LIBS_DIR;/p' $1 | awk -F ';' '{print$2}')
+
+LDFLAGS=$(sed -n '/LDFLAGS;/p' $1 | awk -F ';' '{print$2}')
+
+NAME=$(sed -n '/EXEC;/p' $1 | awk -F ';' '{print$2}')
+
+SOURCES=$(ls $PROJECT_DIR/$SOURCES_DIR | grep \.c)
+
+## PRINT HEADER ##
+printf "##\n## EPITECH PROJECT, 2017\n## Makefile\n## File description:\n## Makefile\n##\n\n" > $FILE
+
+echo -e "CFLAGS +=" $CFLAGS_DIR -I $HEADER_DIR >> $FILE
+echo >> $FILE
+
+printf "CC = %s\n\n" $CC >> $FILE
+
+printf "LDFLAGS += %s\n\n" $LDFLAGS >> $FILE
+
+printf "SRC += $SOURCES_DIR/%s\n" $SOURCES >> $FILE
+
+echo >> $FILE
+
+printf "OBJS = \$(SRC:.c=.o)\n\n" >> $FILE
+
+printf "NAME = %s\n\n" $NAME >> $FILE
+
+
+printf "all:\$(NAME)\n\n\$(NAME):\$(OBJS)\n\t\$(CC) \$(CPPFLAGS) \$(CFLAGS) \$(OBJS) -o \$(NAME) \$(LDFLAGS)\n\nclean:\n\trm -rf \$(OBJS)\n\nfclean: clean\n\trm -rf \$(NAME)\nre: fclean all\n\n.PHONY: all fclean re\n" >> $FILE
+
+# vim: ft=sh
