@@ -34,7 +34,7 @@ all: $(NAME)
 CFLAGS += -I include -g3 -Wall -Werror -Wextra
 $(NAME):$(OBJ)
 	make -C lib
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -L lib -l c_graph_prog -l my_csfml -l my_lib_c
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME) -L lib/ -l my_csfml -l my_lib_c -lcsfml-graphics -lcsfml-window -lcsfml-system -lpthread -lcsfml-audio
 
 clean:
 	make clean -C lib

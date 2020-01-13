@@ -12,10 +12,9 @@ int get_coord (char *str, int *i)
 	int signe = 1;
 	int nb_found = 0;
 	int nb_final = 0;
-
-	if (str[*i] == '-')
-		signe = -1;
 	for (; str[*i] != '\0'; *i += 1) {
+		if (str[*i] == '-')
+			signe = -1;
 		if (str[*i] >= '0' && str[*i] <= '9') {
 			nb_found = str[*i] - '0';
 			nb_final = (nb_final * 10) + nb_found;

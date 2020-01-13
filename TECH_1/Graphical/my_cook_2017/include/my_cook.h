@@ -23,6 +23,7 @@
 #define FOOD (512)
 
 typedef struct recipe_s {
+	int is_ready;
 	int gain;
 	char *name;
 	char *path;

@@ -15,7 +15,7 @@ OBJ = $(SRC:.c=.o)
 
 NAME = libmy_csfml.a
 
-CFLAGS = -I ../../include -l c_graph_prog -Wall -Werror -Wextra
+CFLAGS = -I ../../include -l my_csfml -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -Wall -Werror -Wextra
 
 all: $(NAME)
 

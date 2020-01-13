@@ -23,8 +23,6 @@ scene
     button
         ressources/restaurant/recipe.png 300 1550 help,animated
     obj
-        ressources/restaurant/bg-food.png 850 70 l
-    obj
         ressources/restaurant/lemondone.png 660 215 ready
     obj
         ressources/restaurant/clock.png 105 10 clock,animated

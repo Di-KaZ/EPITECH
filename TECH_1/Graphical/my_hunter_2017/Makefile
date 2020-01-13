@@ -25,7 +25,7 @@ all:$(NAME)
 
 $(NAME):$(OBJ)
 	make -C lib
-	gcc $(CFLAGS) $(OBJ) -o $(NAME) -L lib -l my_csfml -l c_graph_prog -l my
+	gcc $(CFLAGS) $(OBJ) -o $(NAME) -L lib -l my_csfml -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -l my
 	@tput setaf 2; cat signature; tput sgr0
 clean:
 	make clean -C lib

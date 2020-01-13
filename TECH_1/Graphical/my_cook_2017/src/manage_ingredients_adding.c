@@ -1,13 +1,4 @@
 #include "my_cook.h"
-
-static  const sfVector2f appear_pos[4] =
-{
-	{490, 480},
-	{700, 480},
-	{430, 600},
-	{680, 615}
-};
-
 static object_t add_ing_to_list (ingredient_t *to_add, scene_t play)
 {
 	object_t mdr = NULL;
@@ -21,7 +12,6 @@ static object_t add_ing_to_list (ingredient_t *to_add, scene_t play)
 	mdr->type = to_add->flag | FOOD;
 	mdr->sprite = ini_sprite(to_add->path);
 	mdr->offset = sfSprite_getLocalBounds(mdr->sprite->sprite).width / 3;
-	sfSprite_setPosition(mdr->sprite->sprite, appear_pos[rand() % 4]);
 	food_status (mdr);
 	mdr->next = play->objs;
 	return (mdr);
